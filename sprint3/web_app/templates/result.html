@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-color: #343a40; /* Dark background */
+            color: white; /* Light text color */
+        }
+        .container {
+            margin-top: 50px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #495057; /* Darker container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            color: #ffffff; /* White heading */
+        }
+        .result-image {
+            max-width: 30%; /* Set to 30% for a smaller image */
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .btn-secondary {
+            background-color: #6c757d; /* Bootstrap secondary color */
+            border-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268; /* Darker on hover */
+            border-color: #545b62;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Prediction Result</h1>
+        <img src="{{ url_for('static', filename=image_file) }}" alt="Uploaded Image" class="result-image">
+        <h2>Predicted: {{ class_name }} ({{ confidence }}%)</h2>
+        <a href="/" class="btn btn-secondary mt-3">Upload another image</a>
+    </div>
+</body>
+</html>
